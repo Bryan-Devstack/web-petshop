@@ -1,0 +1,191 @@
+/* Estilo general */
+body {
+    margin: 0;
+    background-color: #f0f9f5;
+}
+
+/* Contenedor principal del juego */
+.pet-container {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 300px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Botón para activar el juego */
+.game-trigger {
+    text-align: center;
+    padding: 15px;
+}
+
+.game-trigger button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #4CAF50, #66bb6a); 
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    font-weight: 600;
+}
+
+.game-trigger button:hover {
+    background: linear-gradient(135deg, #388e3c, #4CAF50);
+}
+
+/* Contenedor del juego completo */
+.pet-game-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Botón de cierre */
+.close-button {
+    position: absolute;
+    top: -10px;
+    right: -25px;
+    background-color: transparent;
+    color: #4CAF50;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.close-button:hover {
+    color: #ff0000;
+}
+
+/* Sección de información del juego */
+.game-info {
+    text-align: center;
+    padding: 20px 15px;
+    background: linear-gradient(135deg, #66bb6a, #2e7d32);
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-info h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.game-info p,
+.game-info strong {
+    font-size: 0.95rem;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Juego principal */
+.pet-game {
+    padding: 15px;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.pet-game h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #4CAF50;
+    text-shadow: 1px 1px 2px #cdeccd;
+}
+
+.pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.pet img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border: 3px solid #a5d6a7;
+    border-radius: 10px;
+}
+
+.pet p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #4b4b4b;
+}
+
+/* Stats */
+.stats {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Botones de acción */
+.actions button {
+    margin: 5px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(66, 165, 245, 0.3);
+    font-weight: 500;
+}
+
+.actions button:hover {
+    background-color: #a5d6a7;
+}
+
+/* Cupón */
+.coupon {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e0f7fa;
+    border: 1px solid #4dd0e1;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(77, 208, 225, 0.2);
+}
+
+.coupon p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #00796b;
+}
+
+.coupon strong {
+    font-size: 1rem;
+    color: #004d40;
+}

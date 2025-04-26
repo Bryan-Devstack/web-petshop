@@ -1,0 +1,176 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0fff5; 
+    color: #2e7d32; 
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #43a047; 
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #33691e; 
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #558b2f; 
+    margin-bottom: 30px;
+}
+
+/* Sección del título y bienvenida */
+section {
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 100, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #4e944f; 
+}
+
+/* Botones de acción */
+button {
+    padding: 12px 30px;
+    background-color: #66bb6a; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #388e3c; 
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Sección de Ubicación */
+.location-section {
+    padding: 60px 20px;
+    background-color: #f0fff5;
+    text-align: center;
+  }
+  
+  .location-section h2 {
+    font-size: 3rem; 
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-weight: 700; 
+    letter-spacing: 1px; 
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+  
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .contact-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info h3 {
+    color: #4caf50;
+    margin-bottom: 20px;
+    font-weight: 600; 
+  }
+  
+  .contact-info p, .contact-info ul {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-info ul li {
+    margin-bottom: 8px;
+  }
+  
+  .map-container {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 468px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-media {
+    margin-top: 30px;
+  }
+  
+  .social-media h3 {
+    color: #4caf50;
+    margin-bottom: 15px;
+    font-weight: 600; 
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 30px; 
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    font-size: 32px; 
+    color: #2e7d32;
+    transition: color 0.3s, transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #FF6F61;
+    transform: scale(1.3); 
+  }
+  

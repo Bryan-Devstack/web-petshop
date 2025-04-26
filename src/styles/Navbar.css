@@ -1,0 +1,127 @@
+/* --- General navbar layout --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e8f5e9; 
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.1); 
+  position: relative;
+  z-index: 1000;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(45deg, #43a047, #8bc34a); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Links generales --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a,
+.dropdown-trigger {
+  text-decoration: none;
+  color: #2e7d32; 
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.dropdown-trigger:hover {
+  color: #66bb6a; 
+}
+
+/* --- Dropdown styles --- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.product-dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  min-width: 180px;
+}
+
+.product-dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.product-dropdown li a {
+  text-decoration: none;
+  color: #2e7d32;
+  display: block;
+  transition: background 0.2s ease;
+  border-radius: 6px;
+}
+
+.product-dropdown li a:hover {
+  background-color: #dcedc8; 
+  color: #388e3c;
+}
+
+/* --- Área de acciones (búsqueda, perfil, carrito) --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.search-form input {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #c8e6c9;
+  outline: none;
+  width: 200px;
+  transition: border-color 0.3s, width 0.3s;
+}
+
+.search-form input:focus {
+  border-color: #66bb6a;
+  width: 250px;
+}
+
+.action-icon {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.action-icon:hover {
+  color: #66bb6a;
+  transform: scale(1.2);
+}
