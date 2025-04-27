@@ -10,9 +10,9 @@ import Services from '../pages/Services';
 import Cart from '../pages/Cart';
 import Blog from '../pages/Blog';
 import Login from '../pages/Login';
-import Register from '../pages/Register';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import Profile from '../pages/Profile';
 
 function AppRoutes() {
   return (
@@ -26,9 +26,10 @@ function AppRoutes() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/profile" element={<Profile />} />
+      {/* Puedes agregar más rutas aquí según sea necesario */}
     </Routes>
   );
 }
