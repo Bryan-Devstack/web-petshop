@@ -1,30 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Profile.css'; // Asegúrate de tener un archivo CSS para estilos
+
+import Overview from '../components/Profile/Overview';
+import History from '../components/Profile/History';
+import Reviews from '../components/Profile/Reviews';
+import Settings from '../components/Profile/Settings';
+import ProfileImageUpload from '../components/Profile/ProfileImageUpload';
+
+import '../styles/Profile.css';
 
 const Profile = () => {
   const [user, setUser] = useState(null);
+  const [activeSection, setActiveSection] = useState('overview');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Verificar si el usuario está autenticado
+  const checkAuth = useCallback(() => {
     const isAuthenticated = localStorage.getItem('isAuthenticated');
     if (!isAuthenticated) {
-      navigate('/login'); // Redirigir al login si no está autenticado
+      navigate('/login');
     } else {
-      // Cargar datos del usuario actual
       const currentUser = JSON.parse(localStorage.getItem('currentUser'));
       if (currentUser) {
         setUser(currentUser);
       }
     }
-  }, [navigate]);
+  }, [navigate]); 
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]); 
 
   const handleLogout = () => {
-    // Limpiar el estado de autenticación y redirigir al login
     localStorage.removeItem('isAuthenticated');
     localStorage.removeItem('currentUser');
     navigate('/login');
+  };
+
+  const getButtonClass = (section) => {
+    return activeSection === section ? 'active' : '';
   };
 
   if (!user) {
@@ -33,43 +46,56 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-      {/* Encabezado */}
-      <header className="profile-header">
-        <h1>Bienvenido, {user.fullName}!</h1>
-        <button onClick={handleLogout} className="logout-button">
-          Cerrar sesión
+      <aside className="profile-sidebar">
+        <h2>Perfil</h2>
+        <ul>
+          <li>
+            <button
+              className={getButtonClass('overview')}
+              onClick={() => setActiveSection('overview')}
+            >
+              📊 Resumen
+            </button>
+          </li>
+          <li>
+            <button
+              className={getButtonClass('history')}
+              onClick={() => setActiveSection('history')}
+            >
+              📜 Historial
+            </button>
+          </li>
+          <li>
+            <button
+              className={getButtonClass('reviews')}
+              onClick={() => setActiveSection('reviews')}
+            >
+              ⭐ Revisiones
+            </button>
+          </li>
+          <li>
+            <button
+              className={getButtonClass('settings')}
+              onClick={() => setActiveSection('settings')}
+            >
+              ⚙️ Configuración
+            </button>
+          </li>
+        </ul>
+
+        <button className="logout-button" onClick={handleLogout}>
+          🔒 Cerrar Sesión
         </button>
-      </header>
+      </aside>
 
-      {/* Información del perfil */}
-      <section className="profile-section">
-        <h2>Mi Perfil</h2>
-        <div className="profile-info">
-          <div className="info-item">
-            <strong>Nombre de usuario:</strong> {user.username}
-          </div>
-          <div className="info-item">
-            <strong>Correo electrónico:</strong> {user.email}
-          </div>
-          <div className="info-item">
-            <strong>Teléfono:</strong> {user.phone}
-          </div>
-          <div className="info-item">
-            <strong>Dirección:</strong> {user.address}
-          </div>
-        </div>
-      </section>
+      <main className="profile-content" aria-live="polite">
+        <ProfileImageUpload user={user} setUser={setUser} />
 
-      {/* Secciones adicionales */}
-      <section className="profile-section">
-        <h2>Herramientas</h2>
-        <div className="profile-tools">
-          <button className="tool-button">Historial de Compras</button>
-          <button className="tool-button">Mis Favoritos</button>
-          <button className="tool-button">Configuración de Cuenta</button>
-          <button className="tool-button">Notificaciones</button>
-        </div>
-      </section>
+        {activeSection === 'overview' && <Overview user={user} />}
+        {activeSection === 'history' && <History />}
+        {activeSection === 'reviews' && <Reviews />}
+        {activeSection === 'settings' && <Settings user={user} setUser={setUser} />}
+      </main>
     </div>
   );
 };

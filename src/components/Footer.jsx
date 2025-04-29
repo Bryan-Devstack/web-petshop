@@ -8,7 +8,7 @@ function Footer() {
     e.preventDefault();
     if (email.trim() !== '') {
       alert(`¡Gracias! Te has registrado con éxito para recibir consejos útiles sobre el cuidado de tus mascotas.`);
-      setEmail(''); // Limpiar el campo
+      setEmail(''); 
     }
   };
 
@@ -16,13 +16,11 @@ function Footer() {
     <footer className="footer">
       <div className="footer-main">
         
-        {/* Marca y slogan */}
         <div className="footer-brand">
           <h2>Patitas Felices 🐾</h2>
           <p>Amor, calidad y dedicación para los consentidos de la casa.</p>
         </div>
 
-        {/* Navegación principal */}
         <div className="footer-links">
           <div className="link-section">
             <h4>Patitas Felices</h4>
@@ -65,7 +63,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Newsletter */}
         <div className="newsletter">
           <h4>Recibe Consejos para tu Mascota</h4>
           <p>Suscríbete y recibe en tu correo consejos útiles, novedades, y tips para mejorar el día a día junto a tu mascota.</p>
@@ -83,7 +80,6 @@ function Footer() {
 
       </div>
 
-      {/* Línea inferior de derechos */}
       <div className="footer-bottom">
         <p>© 2025 Patitas Felices. Todos los derechos reservados. Hecho con amor en Lima, Perú 🇵🇪</p>
       </div>

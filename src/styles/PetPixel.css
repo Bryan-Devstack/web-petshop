@@ -1,10 +1,8 @@
-/* Estilo general */
 body {
     margin: 0;
     background-color: #f0f9f5;
 }
 
-/* Contenedor principal del juego */
 .pet-container {
     position: fixed;
     top: 100px;
@@ -20,7 +18,6 @@ body {
     z-index: 9999;
 }
 
-/* Botón para activar el juego */
 .game-trigger {
     text-align: center;
     padding: 15px;
@@ -43,13 +40,11 @@ body {
     background: linear-gradient(135deg, #388e3c, #4CAF50);
 }
 
-/* Contenedor del juego completo */
 .pet-game-container {
     position: relative;
     width: 100%;
 }
 
-/* Botón de cierre */
 .close-button {
     position: absolute;
     top: -10px;
@@ -66,7 +61,6 @@ body {
     color: #ff0000;
 }
 
-/* Sección de información del juego */
 .game-info {
     text-align: center;
     padding: 20px 15px;
@@ -105,7 +99,6 @@ body {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Juego principal */
 .pet-game {
     padding: 15px;
     text-align: center;
@@ -142,14 +135,12 @@ body {
     color: #4b4b4b;
 }
 
-/* Stats */
 .stats {
     margin: 10px 0;
     font-size: 0.9rem;
     color: #333;
 }
 
-/* Botones de acción */
 .actions button {
     margin: 5px;
     padding: 8px 14px;
@@ -168,7 +159,6 @@ body {
     background-color: #a5d6a7;
 }
 
-/* Cupón */
 .coupon {
     margin-top: 15px;
     padding: 10px;

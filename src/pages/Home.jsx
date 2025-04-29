@@ -14,11 +14,9 @@ function Home() {
         <p>Todo lo que tu mascota necesita, en un solo lugar.</p>
       </section>
 
-      {/* Sección con tres bloques */}
       <section style={{ padding: '40px 0', textAlign: 'center' }}>
         <div style={{ display: 'flex', justifyContent: 'space-around', gap: '20px' }}>
           
-          {/* Bloque 1: Somos Especialistas */}
           <div style={{ flex: 1, padding: '20px' }}>
             <FaPaw style={{ fontSize: '40px', color: '#FF6F61' }} />
             <h2>Somos Especialistas</h2>
@@ -28,7 +26,6 @@ function Home() {
             <hr />
           </div>
 
-          {/* Bloque 2: Marcas Reconocidas */}
           <div style={{ flex: 1, padding: '20px' }}>
             <FaRegStar style={{ fontSize: '40px', color: '#FFD700' }} />
             <h2>Marcas Reconocidas</h2>
@@ -38,7 +35,6 @@ function Home() {
             <hr />
           </div>
 
-          {/* Bloque 3: Atención y Calidad */}
           <div style={{ flex: 1, padding: '20px' }}>
             <FaHeadset style={{ fontSize: '40px', color: '#4CAF50' }} />
             <h2>Atención y Calidad</h2>
@@ -63,7 +59,6 @@ function Home() {
         </p>
 
         <div className="contact-grid">
-          {/* Información de contacto */}
           <div className="contact-info">
             <h3>Datos de contacto</h3>
             <p><strong>Dirección:</strong> Av. Arequipa 1234, Lima, Perú</p>
@@ -76,7 +71,6 @@ function Home() {
               <li>Domingos: Cerrado</li>
             </ul>
 
-            {/* Redes sociales */}
             <div className="social-media">
               <h3>¡Síguenos!</h3>
               <div className="social-icons">
@@ -93,8 +87,6 @@ function Home() {
             </div>
 
           </div>
-
-          {/* Mapa de Google */}
           <div className="map-container">
             <iframe
               title="Ubicación Patitas Felices"

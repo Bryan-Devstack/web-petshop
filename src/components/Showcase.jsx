@@ -17,7 +17,6 @@ function Showcase() {
   const [key, setKey] = useState(0); 
 
   const handleVideoEnd = () => {
-    // Cambiar al siguiente video después de que termine
     setCurrentVideo(currentVideo === Promocional1 ? Promocional2 : Promocional1);
     setKey((prevKey) => prevKey + 1);
   };
@@ -25,7 +24,6 @@ function Showcase() {
   return (
     <div className="showcase-container">
       
-      {/* Barra de marcas */}
       <div className="brand-bar">
         <img src={Pedigree} alt="Pedigree" />
         <img src={RoyalCanin} alt="Royal Canin" />
@@ -33,10 +31,8 @@ function Showcase() {
         <img src={Hills} alt="Hill's" />
       </div>
 
-      {/* Galería + Video */}
       <div className="media-section">
         
-        {/* Galería */}
         <div className="gallery">
           <img src={Servicio1} alt="Servicio1" />
           <img src={Servicio2} alt="Servicio2" />
@@ -44,13 +40,12 @@ function Showcase() {
           <img src={Servicio4} alt="Servicio4" />
         </div>
 
-        {/* Video */}
         <div className="video-container">
           <video 
-            key={key} // fuerza la recarga del video al cambiar
+            key={key} 
             autoPlay 
             muted 
-            onEnded={handleVideoEnd} // cambia el video al terminar
+            onEnded={handleVideoEnd} 
           >
             <source src={currentVideo} type="video/mp4" />
             Tu navegador no soporta el video.

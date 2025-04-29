@@ -1,6 +1,4 @@
 //NO TOCAR NADA DE ESTE ARCHIVO
-// Este archivo contiene el componente PetPixel que simula una mascota virtual (SISTEMA COMPLEJO)
-
 import React, { useState, useEffect, useCallback } from 'react';
 import '../styles/PetPixel.css'; 
 import PetImage from '../assets/images/pet.png';
@@ -12,9 +10,8 @@ const PetPixel = () => {
     const [estado, setEstado] = useState("¡Tu mascota está feliz!");
     const [coupon, setCoupon] = useState("");
     const [couponClaimed, setCouponClaimed] = useState(false);
-    const [isGameVisible, setIsGameVisible] = useState(false); // Controla si el juego es visible
+    const [isGameVisible, setIsGameVisible] = useState(false); 
 
-    // Genera un cupón con un descuento aleatorio
     const generarCoupon = () => {
         const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         let couponCode = "Coupon-";
@@ -26,7 +23,6 @@ const PetPixel = () => {
         return `${couponCode} - Canjealo por un descuento del ${descuento}`;
     };
 
-    // Muestra el cupón si la felicidad llega al 100%
     const mostrarCoupon = useCallback(() => {
         if (felicidad === 100 && !couponClaimed) {
             setCoupon(generarCoupon());
@@ -34,7 +30,6 @@ const PetPixel = () => {
         }
     }, [felicidad, couponClaimed]);
 
-    // Actualiza el estado de ánimo de la mascota
     const actualizarEstadoAnimo = useCallback(() => {
         if (hambre > 80) {
             setEstado("¡Tu mascota tiene hambre!");
@@ -47,41 +42,38 @@ const PetPixel = () => {
         }
     }, [hambre, felicidad, energia]);
 
-    // Funciones para interactuar con la mascota
     const alimentarMascota = () => {
-        setHambre((prev) => Math.max(0, prev - 15)); // Reduce el hambre más rápido
-        setFelicidad((prev) => Math.min(100, prev + 4)); // Aumenta la felicidad más rápido
-        setEnergia((prev) => Math.min(100, prev + 5)); // Aumenta un poco la energía
+        setHambre((prev) => Math.max(0, prev - 15)); 
+        setFelicidad((prev) => Math.min(100, prev + 4)); 
+        setEnergia((prev) => Math.min(100, prev + 5)); 
     };
 
     const jugarConMascota = () => {
-        setHambre((prev) => Math.min(100, prev + 10)); // Aumenta el hambre más rápido
-        setEnergia((prev) => Math.max(0, prev - 15)); // Reduce la energía más rápido
-        setFelicidad((prev) => Math.min(100, prev + 4)); // Aumenta la felicidad más rápido
+        setHambre((prev) => Math.min(100, prev + 10)); 
+        setEnergia((prev) => Math.max(0, prev - 15)); 
+        setFelicidad((prev) => Math.min(100, prev + 4)); 
     };
 
     const dormirMascota = () => {
-        setEnergia((prev) => Math.min(100, prev + 20)); // Aumenta la energía más rápido
-        setFelicidad((prev) => Math.max(0, prev - 8)); // Reduce un poco la felicidad
-        setHambre((prev) => Math.min(100, prev + 10)); // Aumenta el hambre más rápido
+        setEnergia((prev) => Math.min(100, prev + 20)); 
+        setFelicidad((prev) => Math.max(0, prev - 8)); 
+        setHambre((prev) => Math.min(100, prev + 10)); 
     };
 
-    // Efecto para actualizar los estados automáticamente cada 2 segundos
     useEffect(() => {
         const interval = setInterval(() => {
-            setHambre((prev) => Math.min(100, prev + 3)); // El hambre aumenta más rápido
-            setFelicidad((prev) => Math.max(0, prev - 2)); // La felicidad disminuye más rápido
-            setEnergia((prev) => Math.max(0, prev - 3)); // La energía disminuye más rápido
+            setHambre((prev) => Math.min(100, prev + 3)); 
+            setFelicidad((prev) => Math.max(0, prev - 2)); 
+            setEnergia((prev) => Math.max(0, prev - 3)); 
             actualizarEstadoAnimo();
             mostrarCoupon();
-        }, 2000); // Intervalo reducido a 2 segundos 
+        }, 2000);
 
         return () => clearInterval(interval);
     }, [actualizarEstadoAnimo, mostrarCoupon]);
 
     return (
         <div className="pet-container">
-            {/* Botón para abrir el juego */}
             {!isGameVisible && (
                 <div className="game-trigger">
                     <button onClick={() => setIsGameVisible(true)}>
@@ -90,10 +82,8 @@ const PetPixel = () => {
                 </div>
             )}
 
-            {/* Juego completo */}
             {isGameVisible && (
                 <div className="pet-game-container">
-                    {/* Botón para cerrar el juego */}
                     <button className="close-button" onClick={() => setIsGameVisible(false)}>
                         X
                     </button>
@@ -120,7 +110,6 @@ const PetPixel = () => {
                             <button onClick={dormirMascota}>Dormir</button>
                         </div>
 
-                        {/* Muestra el cupón debajo del juego */}
                         {coupon && (
                             <div className="coupon">
                                 <p>¡Felicidades! Has ganado un cupón:</p>

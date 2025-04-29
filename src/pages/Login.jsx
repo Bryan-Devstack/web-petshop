@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css'
 
 const Login = () => {
-  const [isLogin, setIsLogin] = useState(true); // Determina si estamos en Login o Register
+  const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -13,17 +13,15 @@ const Login = () => {
     address: '',
   });
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Redireccionamiento
+  const navigate = useNavigate();
 
-  // Verificar si el usuario ya está autenticado
   useEffect(() => {
     const isAuthenticated = localStorage.getItem('isAuthenticated');
     if (isAuthenticated) {
-      navigate('/profile'); // Redirigir al perfil si ya está autenticado
+      navigate('/profile'); 
     }
   }, [navigate]);
 
-  // Recuperar usuarios guardados en el localStorage
   const getUsersFromLocalStorage = () => {
     return JSON.parse(localStorage.getItem('users')) || [];
   };
@@ -47,9 +45,8 @@ const Login = () => {
     } else if (existingUser.password.trim() !== password.trim()) {
       setError('Contraseña incorrecta');
     } else {
-      // Guardar el estado de autenticación
       localStorage.setItem('isAuthenticated', 'true');
-      localStorage.setItem('currentUser', JSON.stringify(existingUser)); // Guardar datos del usuario actual
+      localStorage.setItem('currentUser', JSON.stringify(existingUser)); 
       alert('Inicio de sesión exitoso');
       setError('');
       navigate('/profile');
@@ -71,12 +68,11 @@ const Login = () => {
       const users = getUsersFromLocalStorage();
       const updatedUsers = [...users, newUser];
 
-      // Guardar los usuarios actualizados en localStorage
       localStorage.setItem('users', JSON.stringify(updatedUsers));
 
       alert('Registro exitoso');
       setError('');
-      setIsLogin(true); // Volver a la vista de Login
+      setIsLogin(true); 
     } else {
       setError('Por favor, complete todos los campos correctamente');
     }
@@ -97,7 +93,6 @@ const Login = () => {
 
   return (
     <div className="auth-container">
-      {/* Fondo animado */}
       <div className="bg"></div>
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>

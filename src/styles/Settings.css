@@ -1,0 +1,40 @@
+.settings {
+  padding: 20px;
+}
+
+.settings form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.settings label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.settings input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.settings button {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: center;
+  width: auto;
+}
+
+.settings button:hover {
+  background: #0056b3;
+}

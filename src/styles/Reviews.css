@@ -1,0 +1,33 @@
+.reviews {
+    padding: 20px;
+  }
+  
+  .reviews-title {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .review-section {
+    background: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .rank-section,
+  .level-section {
+    margin-top: 20px;
+  }
+  
+  .progress-bar {
+    background: #ddd;
+    border-radius: 10px;
+    height: 10px;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    background: #007bff;
+    height: 100%;
+  }
+  

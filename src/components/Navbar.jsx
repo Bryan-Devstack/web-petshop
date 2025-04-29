@@ -5,12 +5,10 @@ import '../styles/Navbar.css';
 function Navbar() {
   return (
     <nav className="navbar">
-      {/* Logo */}
       <div className="logo">
         <Link to="/"><FaPaw /> Patitas Felices</Link>
       </div>
 
-      {/* Links principales */}
       <ul className="nav-links">
         <li><Link to="/">Inicio</Link></li>
 
@@ -32,7 +30,6 @@ function Navbar() {
         <li><Link to="/contact">Contacto</Link></li>
       </ul>
 
-      {/* Área de búsqueda y acciones */}
       <div className="nav-actions">
         <form className="search-form">
           <input type="text" placeholder="Buscar productos..." />
